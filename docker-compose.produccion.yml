@@ -1,0 +1,15 @@
+version: "2.2"
+
+networks:
+  mifos:
+    driver: bridge
+services:  
+  mifos-otp:
+    image: harbor.infotec.mx/mifosio/com.mx.infotec.otp.produccion
+    restart: always
+    extra_hosts:
+      - "tidb:10.100.1.29"
+    ports:
+      - 2050:2050   
+    networks:
+      - mifos

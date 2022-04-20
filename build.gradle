@@ -1,0 +1,44 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.10.BUILD-SNAPSHOT'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.mx.infotec.fineract'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	jcenter()
+	mavenLocal()
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+	//maven { url 'http://172.22.216.193:8081/artifactory/infotec-snapshot' }
+}
+
+configurations.all {
+   exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.security:spring-security-crypto:5.3.3.RELEASE'
+	implementation 'org.springframework.security:spring-security-test'
+	implementation 'org.flywaydb:flyway-core'
+	implementation 'org.jboss.aerogear:aerogear-otp-java:1.0.0'
+	implementation 'org.bouncycastle:bcprov-jdk15on:1.66'
+	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+	runtimeOnly 'com.h2database:h2'
+	runtimeOnly 'mysql:mysql-connector-java:8.0.28'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
