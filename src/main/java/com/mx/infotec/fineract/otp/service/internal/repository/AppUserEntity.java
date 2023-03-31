@@ -17,12 +17,17 @@
  * under the License.
  */
 package com.mx.infotec.fineract.otp.service.internal.repository;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 import javax.persistence.*;
 
 @SuppressWarnings("unused")
 @Entity
 @Table(name = "otp_app_user")
+@Getter
+@Setter
 public class AppUserEntity {
 
   @Id
@@ -51,69 +56,4 @@ public class AppUserEntity {
   public AppUserEntity() {
     super();
   }
-
-  public Long getId() {
-    return this.id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public String getUsername() {
-    return this.username;
-  }
-
-  public void setUsername(String username) {
-    this.username = username;
-  }
-
-  public String getPasswordHash() {
-    return this.passwordHash;
-  }
-
-  public void setPasswordHash(String password) {
-    this.passwordHash = password;
-  }
-
-  public String getSecret() {
-    return this.secret;
-  }
-
-  public void setSecret(String secret) {
-    this.secret = secret;
-  }
-
-  public Boolean isEnabled() {
-    return this.enabled;
-  }
-
-  public Boolean getEnabled() {
-    return this.enabled;
-  }
-
-  public void setEnabled(Boolean enabled) {
-    this.enabled = enabled;
-  }
-
-  public int getLoginAttempt() {
-    return this.loginAttempt;
-  }
-
-  public void setLoginAttempt(int loginAttempt) {
-    this.loginAttempt = loginAttempt;
-  }
-
-  public Boolean isNonLocked() {
-    return this.nonlocked;
-  }
-
-  public Boolean getNonLocked() {
-    return this.nonlocked;
-  }
-
-  public void setNonLocked(Boolean nonlocked) {
-    this.nonlocked = nonlocked;
-  }
-
 }

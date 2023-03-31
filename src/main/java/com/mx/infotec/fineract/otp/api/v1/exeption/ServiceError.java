@@ -1,6 +1,9 @@
 package com.mx.infotec.fineract.otp.api.v1.exeption;
 
+import lombok.Getter;
+
 @SuppressWarnings("WeakerAccess")
+@Getter
 public final class ServiceError {
 
   private final int code;
@@ -14,14 +17,6 @@ public final class ServiceError {
 
   public static Builder create(final int code) {
     return new Builder(code);
-  }
-
-  public int getCode() {
-    return code;
-  }
-
-  public String getMessage() {
-    return message;
   }
 
   public static final class Builder {

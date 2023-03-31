@@ -63,7 +63,7 @@ public class AppUserServiceImp implements AppUserService {
     entity.setPasswordHash(AppUserCommand.getPasswordHash());
     entity.setSecret(AppUserCommand.getSecret());
     entity.setEnabled(AppUserCommand.getEnabled());
-    entity.setNonLocked(true);
+    entity.setNonlocked(true);
     entity.setLoginAttempt(0);
     this.AppUserJpaEntityRepository.save(entity);
 
@@ -89,7 +89,7 @@ public class AppUserServiceImp implements AppUserService {
 
       final AppUserEntity entity = this.findCountryEntityOrThrow(AppUserCommand.getUsername());
       entity.setLoginAttempt(AppUserCommand.getLoginAttempt());
-      entity.setNonLocked(AppUserCommand.getNonLocked());
+      entity.setNonlocked(AppUserCommand.getNonLocked());
       this.AppUserJpaEntityRepository.save(entity);
   }
 

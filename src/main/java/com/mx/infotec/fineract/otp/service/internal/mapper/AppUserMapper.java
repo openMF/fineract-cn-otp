@@ -36,7 +36,7 @@ public class AppUserMapper {
     AppUser.setSecret(AppUserJpaEntity.getSecret());
     AppUser.setEnabled(AppUserJpaEntity.getEnabled());
     AppUser.setLoginAttempt(AppUserJpaEntity.getLoginAttempt());
-    AppUser.setNonLocked(AppUserJpaEntity.getNonLocked());
+    AppUser.setNonLocked(AppUserJpaEntity.getNonlocked());
     return AppUser;
   }
 
@@ -48,7 +48,7 @@ public class AppUserMapper {
     AppUserJpaEntity.setSecret(AppUser.getSecret());
     AppUserJpaEntity.setEnabled(AppUser.getEnabled());
     AppUserJpaEntity.setLoginAttempt(AppUser.getLoginAttempt());
-    AppUserJpaEntity.setNonLocked(AppUser.getNonLocked());
+    AppUserJpaEntity.setNonlocked(AppUser.getNonLocked());
     return AppUserJpaEntity;
   }
 }
