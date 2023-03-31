@@ -19,7 +19,12 @@
 
 package com.mx.infotec.fineract.otp.api.v1.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 @SuppressWarnings({"WeakerAccess", "unused"})
+@Getter
+@AllArgsConstructor
 public class SignupResponse {
 
   public enum Status {
@@ -35,23 +40,4 @@ public class SignupResponse {
   public SignupResponse(Status status) {
     this(status, null, null);
   }
-
-  public SignupResponse(Status status, String username, String secret) {
-    this.status = status;
-    this.username = username;
-    this.secret = secret;
-  }
-
-  public Status getStatus() {
-    return this.status;
-  }
-
-  public String getSecret() {
-    return this.secret;
-  }
-
-  public String getUsername() {
-    return this.username;
-  }
-
 }
